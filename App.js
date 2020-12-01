@@ -26,7 +26,7 @@ export default class App extends React.Component {
     this.fetch_weather()
   }
   fetch_weather = () => {
-    fetch('http://api.openweathermap.org/data/2.5/weather?q=' + this.state.city + '&appid=71bc0174c0bc055562e89f563918d2a1').then((response) => response.json())
+    fetch('http://api.openweathermap.org/data/2.5/weather?q=' + this.state.city + '&appid=APIKEY').then((response) => response.json())
       .then((json) => {
         this.setState({ data: json });
         this.setState({ temp: (json.main.temp - 273.15).toFixed(1) + " °C" })
